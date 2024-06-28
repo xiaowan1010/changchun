@@ -1,18 +1,34 @@
 <template>
   <div class="home">
     <div class="top">
-      <div class="comName">CCKJ常淳</div>
-      <div class="menu">
-        <div v-for="item in tabs" :key="item"></div>
+      <div>
+        <div class="comName">CCKJ常淳</div>
+        <div class="menu">
+          <div class="menus" v-for="(item, index) in tabs" :key="index">
+            <div class="menus-item">{{ item }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="rightText">
+        <span v-for="(item, index) in texts" :key="index">
+          {{item}}
+          <el-divider v-if="index!==texts.length-1" direction="vertical"></el-divider>
+        </span>
+        <span v-for="(item, index) in texts1" :key="index" style="margin-left: 10px;">
+          {{item}}
+          <el-divider  v-if="index!==texts.length-1"  direction="vertical"></el-divider>
+        </span>
+        
       </div>
     </div>
-    <!-- <div class="card">
+    <div class="card">
       <el-carousel :interval="2000" arrow="always">
         <el-carousel-item v-for="item in imgs" :key="item">
-          <img :src="require('@/assets/images/' + item + '.jpg')" alt="">
+          <img :src="require('@/assets/images/' + item + '.jpg')" alt="" />
         </el-carousel-item>
       </el-carousel>
     </div>
+    <!-- 
     <product v-if="activeIndex2 == 1"></product> -->
   </div>
 </template>
@@ -28,7 +44,16 @@ export default {
   // },
   data() {
     return {
-      tabs:["首页","产品中心"],
+      texts:["走","进","常","淳"],
+      texts1:["从","芯","开","始"],
+      tabs: [
+        "首页",
+        "产品中心",
+        "关于我们",
+        "生产制造中心",
+        "技术支持",
+        "招贤纳士",
+      ],
       imgs: ["1", "2", "3"],
       activeIndex2: "1",
       isFocus: false,
@@ -97,7 +122,7 @@ body {
   position: fixed;
   top: 0;
   box-sizing: border-box;
-  padding: 0 32px;
+  padding: 0 60px;
   width: 100%;
   height: 80px;
   line-height: 80px;
@@ -105,6 +130,7 @@ body {
   color: #fff;
   text-align: left;
   display: flex;
+  justify-content: space-between;
 
   .comName {
     font-size: 28px;
@@ -113,7 +139,34 @@ body {
   }
 
   .menu {
-   
+    font-size: 16px;
+    color: #fff;
+    font-family: Alibaba PuHuiTi 2, Alibaba PuHuiTi 20;
+    display: flex;
+    align-items: center;
+    .menus {
+      margin-right: 40px;
+    }
+  }
+}
+.rightText{
+  font-size: 16px !important;
+}
+.card {
+  height: 800px;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: 800px;
+  }
+
+  ::v-deep .el-carousel--horizontal {
+    height: 800px;
+  }
+
+  ::v-deep .el-carousel__container {
+    height: 800px;
   }
 }
 </style>
