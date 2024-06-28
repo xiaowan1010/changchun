@@ -9,14 +9,10 @@
           </div>
         </div>
       </div>
-      <div class="rightText">
+      <div>
         <span v-for="(item, index) in texts" :key="index">
           {{item}}
-          <el-divider v-if="index!==texts.length-1" direction="vertical"></el-divider>
-        </span>
-        <span v-for="(item, index) in texts1" :key="index" style="margin-left: 10px;">
-          {{item}}
-          <el-divider  v-if="index!==texts.length-1"  direction="vertical"></el-divider>
+          <el-divider direction="vertical"></el-divider>
         </span>
         
       </div>
@@ -44,8 +40,7 @@ export default {
   // },
   data() {
     return {
-      texts:["走","进","常","淳"],
-      texts1:["从","芯","开","始"],
+      texts:["走","进","常"],
       tabs: [
         "首页",
         "产品中心",
@@ -148,9 +143,6 @@ body {
       margin-right: 40px;
     }
   }
-}
-.rightText{
-  font-size: 16px !important;
 }
 .card {
   height: 800px;

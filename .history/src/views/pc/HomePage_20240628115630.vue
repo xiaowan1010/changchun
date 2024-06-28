@@ -9,14 +9,14 @@
           </div>
         </div>
       </div>
-      <div class="rightText">
+      <div>
         <span v-for="(item, index) in texts" :key="index">
           {{item}}
-          <el-divider v-if="index!==texts.length-1" direction="vertical"></el-divider>
+          <el-divider direction="vertical"></el-divider>
         </span>
-        <span v-for="(item, index) in texts1" :key="index" style="margin-left: 10px;">
+        <span v-for="(item, index) in texts1" :key="index">
           {{item}}
-          <el-divider  v-if="index!==texts.length-1"  direction="vertical"></el-divider>
+          <el-divider direction="vertical"></el-divider>
         </span>
         
       </div>
@@ -148,9 +148,6 @@ body {
       margin-right: 40px;
     }
   }
-}
-.rightText{
-  font-size: 16px !important;
 }
 .card {
   height: 800px;
