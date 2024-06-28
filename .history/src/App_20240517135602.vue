@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import homePc from './views/pc/HomePage.vue';
+import homePc from './views/pc/HomeView.vue';
 import homeMobile from './views/mobile/home.vue';
 export default {
   data() {
