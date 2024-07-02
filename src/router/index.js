@@ -10,17 +10,26 @@ const routes = [
     name: 'HomePage',
     component: HomePage
   },
-  // {
-  //   path: '/AboutUs',
-  //   name: 'AboutUs',
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/pc/AboutUs.vue')
-  // }
+  {
+    path: '/AboutUS',
+    name: 'AboutUS',
+    component: () => import(/* webpackChunkName: "about" */ '../views/pc/AboutUS.vue')
+  },
+  {
+    path: '/ProductCenter',
+    name: 'ProductCenter',
+    component: () => import(/* webpackChunkName: "about" */ '../views/pc/ProductCenter.vue')
+  }
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    return { x: 0, y: 0 }; // Always scroll to top
+  },
 })
+
 
 export default router

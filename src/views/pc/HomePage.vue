@@ -1,26 +1,5 @@
 <template>
   <div class="home">
-    <div class="top">
-      <div>
-        <div class="comName">CCKJ常淳</div>
-        <div class="menu">
-          <div class="menus" v-for="(item, index) in tabs" :key="index">
-            <div class="menus-item">{{ item }}</div>
-          </div>
-        </div>
-      </div>
-      <div class="rightText">
-        <span v-for="(item, index) in texts" :key="index">
-          {{item}}
-          <el-divider v-if="index!==texts.length-1" direction="vertical"></el-divider>
-        </span>
-        <span v-for="(item, index) in texts1" :key="index" style="margin-left: 10px;">
-          {{item}}
-          <el-divider  v-if="index!==texts.length-1"  direction="vertical"></el-divider>
-        </span>
-        
-      </div>
-    </div>
     <div class="card">
       <el-carousel :interval="2000" arrow="always">
         <el-carousel-item v-for="item in imgs" :key="item">
@@ -28,48 +7,27 @@
         </el-carousel-item>
       </el-carousel>
     </div>
-    <!-- 
-    <product v-if="activeIndex2 == 1"></product> -->
+    <product v-if="activeIndex==0"></product>
   </div>
 </template>
 
 <script>
 // import home from "./home.vue";
-// import AboutUs from "./AboutUs.vue";
+import product from "./components/product.vue";
 export default {
   name: "HomeView",
-  // components: {
-  //   home,
-  //   AboutUs,
-  // },
+  components: {
+    product,
+  },
   data() {
     return {
-      texts:["走","进","常","淳"],
-      texts1:["从","芯","开","始"],
-      tabs: [
-        "首页",
-        "产品中心",
-        "关于我们",
-        "生产制造中心",
-        "技术支持",
-        "招贤纳士",
-      ],
+      activeIndex:0,
       imgs: ["1", "2", "3"],
-      activeIndex2: "1",
       isFocus: false,
     };
   },
   methods: {
-    focus() {
-      this.isFocus = true;
-    },
-    blur() {
-      this.isFocus = false;
-    },
-    handleSelect(val) {
-      this.activeIndex2 = val;
-      console.log(val);
-    },
+
   },
 };
 </script>
@@ -109,48 +67,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-}
-
-.home {
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-
-.top {
-  z-index: 99;
-  position: fixed;
-  top: 0;
-  box-sizing: border-box;
-  padding: 0 60px;
-  width: 100%;
-  height: 80px;
-  line-height: 80px;
-  background-color: #252525;
-  color: #fff;
-  text-align: left;
-  display: flex;
-  justify-content: space-between;
-
-  .comName {
-    font-size: 28px;
-    font-weight: 600;
-    margin-right: 50px;
-  }
-
-  .menu {
-    font-size: 16px;
-    color: #fff;
-    font-family: Alibaba PuHuiTi 2, Alibaba PuHuiTi 20;
-    display: flex;
-    align-items: center;
-    .menus {
-      margin-right: 40px;
-    }
-  }
-}
-.rightText{
-  font-size: 16px !important;
+  background: #F9F9F9;
 }
 .card {
   height: 800px;

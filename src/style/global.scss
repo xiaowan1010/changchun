@@ -1,0 +1,97 @@
+$inblock: inline-block;
+$block: block;
+$vt: top;
+$vm: middle;
+$txtc: center;
+$txtl: left;
+$txtr: right;
+$f16: 16px;
+$f14: 14px;
+$f12: 12px;
+$color-white: #fff;
+$color-light: #999;
+$color-ccc: #ccc;
+$color-e2e4eb: #E2E4EB;
+$color-gray: #9BA7B6;
+$color-black: #6C7489;
+$color-e6e6e6: #e6e6e6;
+$color-primary: #0080FF;
+$color-primary-hover: #5395E6;
+$color-success: #67c23a;
+$color-success-hover: #85ce61;
+$color-warning: #e6a23c;
+$color-warning-hover: #ebb563;
+$color-danger: #f56c6c;
+$color-danger-hover: #f78989;
+$color-risk-ts: #33BEDB;
+$color-risk-ts-border: rgba(51, 190, 219, .5);
+$color-risk-ts-bg: rgba(51, 190, 219, .1);
+$color-risk-gz: #0080FF;
+$color-risk-gz-border: rgba(0, 128, 255, .5);
+$color-risk-gz-bg: rgba(0, 128, 255, .1);
+$color-risk-yj: #F7B500;
+$color-risk-yj-border: rgba(247, 181, 0, .5);
+$color-risk-yj-bg: rgba(247, 181, 0, .1);
+$color-risk-td: #FE6A41;
+$color-risk-td-border: rgba(254, 106, 65, .5);
+$color-risk-td-bg: rgba(254, 106, 65, .1);
+$color-risk-wu: #6C7489;
+$color-risk-wu-border: rgba(108, 116, 137, .5);
+$color-risk-wu-bg: rgba(108, 116, 137, .1);
+$color-href: #0080FF;
+$color-text-10: rgba(0, 0, 0, .1);
+$color-text-25: rgba(0, 0, 0, .25);
+$color-text-30: rgba(0, 0, 0, .3);
+$color-text-45: rgba(0, 0, 0, .45);
+$color-text-65: rgba(0, 0, 0, .65);
+$color-text-85: rgba(0, 0, 0, .85);
+$color-text-100: rgba(0, 0, 0, 1);
+$color-text-bg: #F3F5F7;
+$color-main: #0080FF;
+$color-main-bg: rgba(0, 128, 255, .1);
+$color-main-30: rgba(0, 128, 255, .3);
+$color-eee: #eee;
+$color-fail: #E62E4D;
+$color-fail-bg: rgba(230, 46, 77, .1);
+$color-underway: #F7B500;
+$color-underway-bg: rgba(247, 181, 0, .1);
+
+
+@mixin text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.home {
+  height: 100%;
+  background: #F9F9F9;
+  margin-top: 80px;
+  width: 100%;
+}
+
+.main {
+  background-color: #fff;
+  padding: 60px;
+  margin-top: 60px;
+}
+
+.top-title {
+  display: flex;
+  align-items: center;
+  padding: 0 20px 0 34px;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.85);
+  position: relative;
+  text-align: left;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    width: 5px;
+    height: 20px;
+    background: #008FD7;
+  }
+}
